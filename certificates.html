@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohan Dwivedi - Python Developer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+        section {
+            padding: 2em;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .certifications {
+            margin-top: 1em;
+        }
+        .edit-btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 0.5em 1em;
+            border: none;
+            cursor: pointer;
+            margin-top: 1em;
+        }
+        .edit-btn:hover {
+            background-color: #0056b3;
+        }
+        .cert-list {
+            list-style: none;
+            padding: 0;
+        }
+        .cert-list li {
+            padding: 0.5em 0;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Rohan Dwivedi</h1>
+    <p>Python Developer | Machine Learning Enthusiast</p>
+</header>
+
+<section>
+    <div class="container">
+        <h2>About Me</h2>
+        <p>Hi, I’m Rohan Dwivedi, a passionate Python developer and machine learning enthusiast with a focus on creating intelligent systems. I have a deep understanding of machine learning algorithms, data science techniques, and backend development.</p>
+
+        <h2>Skills</h2>
+        <ul>
+            <li>Python</li>
+            <li>Machine Learning</li>
+            <li>Web Development</li>
+            
+        </ul>
+
+        <h2>Certifications</h2>
+        <div class="certifications">
+            <ul class="cert-list" id="certifications">
+                <li><a href="https://www.coursera.org/account/accomplishments/certificate/VPDU4SRRQ1EO">Machine Learning</a> - Coursera</li>
+                <li><a href="https://www.coursera.org/account/accomplishments/certificate/HQEH9X8F93EA">Python for Everybody</a> - Coursera</li>
+                <li><a href="https://www.coursera.org/account/accomplishments/certificate/X4PJ5T91MJ4A">Web devlopment </a>- Coursera</li>
+            </ul>
+            <button class="edit-btn" onclick="editCertifications()">Edit Certifications</button>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Rohan Dwivedi | All Rights Reserved</p>
+</footer>
+
+<script>
+    function editCertifications() {
+        let certList = document.getElementById('certifications');
+        let newCert = prompt('Enter new certifications (comma-separated):');
+        if (newCert) {
+            certList.innerHTML = ''; 
+            let certArray = newCert.split(',');
+            certArray.forEach(function(cert) {
+                let li = document.createElement('li');
+                li.textContent = cert.trim();
+                certList.appendChild(li);
+            });
+        }
+    }
+</script>
+
+</body>
+</html>
